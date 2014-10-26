@@ -1,0 +1,21 @@
+Integrantes:
+Diego Dinamarca 201273004-k
+Francisco Salazar 201273104-6
+
+Estrategia utilizada:
+
+Nuestro proyecto consiste en una página web desarrollada en Ruby on Rails 4 y sqlite3 como DBMS.
+Hasta ahora nuestra página es capaz de:
+-Registrar nuevos usuarios.
+-Mostrar el catalogo de productos.
+-Agregar, Modificar o eliminar productos (solo para el admin)
+
+EL registro de administradores se hace por medio de seed.rb (ejecute rake db:seed para poblar la BD), dentro de este mismo archivo puede
+ver el email y contraseña para poder acceder a la página como administrador.
+
+Hasta ahora los usuarios pueden registrarse con cualquier email (válido o no) pues no se ha implementado una verificación por email. La contraseña de los usuarios debe ser de por lo menos 8 carácteres.
+
+El catálogo de productos se encuentra en la página principal y al clickear el nombre de producto el usuario es redirigido hacia la página
+de detalles del producto.
+
+La únicas tablas que existen en la BD hasta ahora son las de productos y usuarios.
