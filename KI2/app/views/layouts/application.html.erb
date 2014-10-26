@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KI Terapias Alternativas</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<body class='<%= controller.controller_name %>'> <!-- to limit controller-specific rules to pages associated with that controller. -->
+		<div id="banner">
+			<%= image_tag('logo.png',size: '100x50') %>
+			<%= @page_title || "KI terapias alternativas" %>
+		</div>
+		<div id="columns">
+			<div id="side">
+				<ul>
+					<li> <%= link_to 'Home', root_path %></li>
+					<% if current_user %>
+						<% if current_user.try(:admin?) %>
+							<li> <%= link_to 'Productos', products_path %></li>
+						<% end %>
+						<li><%= link_to 'Perfil', current_user%></li>
+		  				<li><%= link_to 'Cerrar Sesión', destroy_user_session_path, :method=>'delete' %></li>
+	  				<% else %>
+					  <li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
+					  <li><%= link_to 'Registrarse', new_user_registration_path %></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="main">
+  			<%= yield %>
+  		</div>
+  	</div>
+
+
+
+</body>
+</html>
